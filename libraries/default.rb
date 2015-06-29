@@ -10,7 +10,7 @@ def deploy_piwik(data)
     cron "#{data['id']}-archiving" do
       minute (0..59).to_a.sample
       user data['user']
-      command "cd #{base_dir} && #{php_command} console core:archive --url=#{server_name} >> #{log_dir}/archive.log"
+      command "cd #{base_dir} && #{php_command} console core:archive --url=#{server_name} --force-all-websites >> #{log_dir}/archive.log"
     end
   end
 end
