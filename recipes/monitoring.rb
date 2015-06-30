@@ -1,0 +1,1 @@
+mo_application_php_monitoring_from_databag 'mo_piwik'
