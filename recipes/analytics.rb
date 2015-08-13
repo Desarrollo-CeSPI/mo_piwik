@@ -18,7 +18,7 @@ file node['mo_piwik']['analytics']['syslog_script'] do
 #{node['mo_piwik']['analytics']['base_dir']}/import_logs.py \
   --url=#{node['mo_piwik']['analytics']['piwik_url']} \
   --token-auth=#{node['mo_piwik']['analytics']['token_auth']} \
-  --recorders=#{node.cpu.total} \
+  --recorders=#{node['mo_piwik']['analytics']['recorders']} \
   --enable-http-errors \
   --enable-http-redirects \
   --enable-static \

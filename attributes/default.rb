@@ -1,4 +1,5 @@
 # General Piwik configuration parameters.
+default['mo_piwik']['databag'] = node["mo_application"]["databag"]
 default['mo_piwik']['id'] = "piwik"
 default['mo_piwik']['user'] = "piwik"
 default['mo_piwik']['group'] = "piwik"
@@ -10,9 +11,7 @@ default['mo_piwik']['migration_command'] = <<-EOCMD
     #{php_command} composer.phar install
   EOCMD
 
-default['mo_piwik']['shared_dirs'] = {
-      "tmp" => "tmp"
-}
+default['mo_piwik']['shared_dirs'] = {}
 
 default['mo_piwik']['shared_files'] = {
       "config/config.ini.php" => "config/config.ini.php"
@@ -20,7 +19,7 @@ default['mo_piwik']['shared_files'] = {
 
 # GIT repository information.
 default['mo_piwik']['repo'] = "https://github.com/piwik/piwik.git"
-default['mo_piwik']['revision'] = "2.13.1"
+default['mo_piwik']['revision'] = "2.14.3"
 default['mo_piwik']['enable_submodules'] = true
 
 default['mo_piwik']['databases'] = { 
