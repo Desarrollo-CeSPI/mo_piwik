@@ -42,6 +42,9 @@ default['mo_piwik']['applications']['frontend']['relative_document_root'] = ''
 default['mo_piwik']['applications']['frontend']['php_filename'] = "(index|piwik)"
 
 default['mo_piwik']['backup']['archives'] =  ['shared/config', 'current/plugins'].map {|x| ::File.join(node['mo_piwik']['path'],'app',x) }
+default['mo_piwik']['backup']['daily_keeps'] = 3
+default['mo_piwik']['backup']['weekly_keeps'] = 1
+default['mo_piwik']['backup']['monthly_keeps'] = 1
 
 default['mo_application']['packages'] = (Array(node['mo_application']['packages']) + %w(curl)).uniq
 
